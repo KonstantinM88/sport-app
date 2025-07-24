@@ -20,7 +20,7 @@ export default function ProductsClient() {
   return (
     <div>
       <ul>
-        {products.map((product) => (
+        {products.map((product: Product) => (
             <ProductCard key={product.id} product={product} />
         //   <li key={product.id}>
         //     {product.title}
