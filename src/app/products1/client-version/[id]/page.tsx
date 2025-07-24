@@ -44,3 +44,7 @@ export default async function UserPage({ params }: UserPageProps) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  return [];
+}
