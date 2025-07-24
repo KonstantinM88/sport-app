@@ -32,13 +32,13 @@ export default function ProductsClientVersion() {
         {products.map((product) => (
           <li
             key={product.id}
-            className="border rounded-lg p-4 shadow-md hover:shadow-lg transition"
+            className="border rounded-lg p-4 shadow-md hover:shadow-lg transition group"
           >
             <div className="flex items-start gap-4">
               <img
                 src={product.images[0]}
                 alt={product.title}
-                className="w-24 h-24 object-cover rounded"
+                className="w-24 h-24 object-cover rounded transform transition-transform duration-300 group-hover:scale-105"
               />
               <div>
                 <h2 className="text-lg font-semibold mb-1">
