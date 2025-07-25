@@ -1,4 +1,6 @@
-import { Product } from "@/types";
+// import { Product } from "@/types";
+
+import { Product } from "../../../types";
 
 const ProductsServerVersion = async () => {
   const res = await fetch("https://api.escuelajs.co/api/v1/products", {
