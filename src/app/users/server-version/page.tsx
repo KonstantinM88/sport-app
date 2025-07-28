@@ -1,5 +1,6 @@
-import { User } from "@/types";
+
 import { revalidateTag } from "next/cache";
+import { User } from "../../../types";
 
 // by default - server component
 const UsersServerVersion = async () => {

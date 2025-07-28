@@ -1,8 +1,11 @@
 "use client";
-import notFound from "@/app/not-found";
-import { User } from "@/types";
+// import notFound from "@/app/not-found";
+// import { User } from "@/types";
 import Link from "next/link";
+// import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
+import { User } from "../../../types";
+import notFound from "../../not-found";
 
 export default function UsersClientVersion() {
   const [users, setUsers] = useState<User[]>([]);

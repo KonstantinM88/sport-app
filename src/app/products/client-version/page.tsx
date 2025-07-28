@@ -1,7 +1,8 @@
 "use client";
 
-import { Product } from "@/types";
+// import { Product } from "@/types";
 import { useEffect, useState } from "react";
+import { Product } from "../../../types";
 
 export default function ProductsClientVersion() {
   const [products, setProducts] = useState<Product[]>([]);
