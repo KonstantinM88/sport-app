@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "../../../db";
 import { eventsTable } from "../../../db/schema";
 import z from "zod";
+import { getServerSession } from "next-auth";
 
 const EventInsertSchema = z.object({
     name: z.string().min(3, "Minimal length is 3"),
@@ -18,12 +19,20 @@ const EventInsertSchema = z.object({
   });
   
   export async function GET() {
+
     const events = await db.select().from(eventsTable);
     return NextResponse.json(events);
   }
   
   export async function POST(req: NextRequest) {
     try {
+      const session = await getServerSession();
+      if (!session?.user) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
+      // 401 - когда не залогин
+      // 403 - когда залогинен, но нет нужной роли Forbidden
+
       const body = await req.json();
       const newEvent = EventInsertSchema.parse(body);
       const [event] = await db.insert(eventsTable).values(newEvent).returning();

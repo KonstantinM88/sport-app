@@ -4,6 +4,7 @@ import "./globals.css";
 // import NavBar from "@/components/NavBar/NavBar";
 import { ThemeProvider } from "next-themes";
 import NavBar from "../components/NavBar/NavBar";
+import { Providers } from "./providers/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,10 +32,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Providers>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavBar />
           {children}
         </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
