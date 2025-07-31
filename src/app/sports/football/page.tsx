@@ -18,7 +18,7 @@ export default function Football() {
           </li>
         </ul>
   
-        <p className="p-4 m-4">Целевая аудитория: подходит для начинающих</p>
+        <p className="p-4 m-4">Целевая аудитория: подходит для начинающих!</p>
       </section>
     );
   }
